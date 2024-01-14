@@ -1,0 +1,14 @@
+project: default
+source:
+  repoURL: 'https://github.com/Anshuman2121/todoapp-ui.git'
+  path: manifests
+  targetRevision: main
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: todoui
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
+  syncOptions:
+    - CreateNamespace=true
